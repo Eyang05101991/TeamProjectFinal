@@ -138,7 +138,9 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductDB.cs" />
     <Compile Include="Models\ProductViewModel.cs" />
+    <Compile Include="Models\SubscribeDB.cs" />
     <Compile Include="Models\TeamProjectFinalDB.cs" />
     <Compile Include="Models\Subscriber.cs" />
     <Compile Include="Models\SubscribeViewModel.cs" />
