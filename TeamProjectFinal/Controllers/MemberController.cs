@@ -9,7 +9,7 @@ namespace TeamProjectFinal.Controllers
     public class MemberController : Controller
     {
         // GET: Member
-        public ActionResult Register()
+        public ActionResult Subscribe()
         {
             return View();
         }
