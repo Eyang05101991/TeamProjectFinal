@@ -4,7 +4,7 @@ namespace TeamProjectFinal.Models
     using System.Data.Entity;
     using System.Linq;
 
-    public class Subscribe : DbContext
+    public class TeamProjectFinalDB : DbContext
     {
         // Your context has been configured to use a 'Subscribe' connection string from your application's 
         // configuration file (App.config or Web.config). By default, this connection string targets the 
@@ -12,7 +12,7 @@ namespace TeamProjectFinal.Models
         // 
         // If you wish to target a different database and/or database provider, modify the 'Subscribe' 
         // connection string in the application configuration file.
-        public Subscribe()
+        public TeamProjectFinalDB()
             : base("name=Subscribe")
         {
         }
@@ -22,6 +22,7 @@ namespace TeamProjectFinal.Models
 
         // public virtual DbSet<MyEntity> MyEntities { get; set; }
         public virtual DbSet<Subscriber> Subscribers { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
     }
 
     //public class MyEntity

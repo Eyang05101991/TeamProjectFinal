@@ -5,14 +5,14 @@ namespace TeamProjectFinal.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<TeamProjectFinal.Models.Subscribe>
+    internal sealed class Configuration : DbMigrationsConfiguration<TeamProjectFinal.Models.TeamProjectFinalDB>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(TeamProjectFinal.Models.Subscribe context)
+        protected override void Seed(TeamProjectFinal.Models.TeamProjectFinalDB context)
         {
             //  This method will be called after migrating to the latest version.
 

@@ -124,6 +124,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -131,8 +132,14 @@
     <Compile Include="Migrations\201802120400188_Initial.Designer.cs">
       <DependentUpon>201802120400188_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802120504239_Product.cs" />
+    <Compile Include="Migrations\201802120504239_Product.Designer.cs">
+      <DependentUpon>201802120504239_Product.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Subscribe.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductViewModel.cs" />
+    <Compile Include="Models\TeamProjectFinalDB.cs" />
     <Compile Include="Models\Subscriber.cs" />
     <Compile Include="Models\SubscribeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -147,6 +154,7 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
     <Content Include="Views\Member\Subscribe.cshtml" />
+    <Content Include="Views\Product\AddProduct.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -160,6 +168,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201802120400188_Initial.resx">
       <DependentUpon>201802120400188_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802120504239_Product.resx">
+      <DependentUpon>201802120504239_Product.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
