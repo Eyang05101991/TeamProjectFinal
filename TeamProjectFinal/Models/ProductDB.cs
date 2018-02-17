@@ -14,11 +14,6 @@ namespace TeamProjectFinal.Models
             return prods;
         }
 
-        public static void AddProduct()
-        {
-            throw new NotImplementedException();
-        }
-
         public static void DeleteProduct()
         {
             throw new NotImplementedException();
@@ -27,6 +22,13 @@ namespace TeamProjectFinal.Models
         public static void UpdateProduct()
         {
             throw new NotImplementedException();
+        }
+
+        internal static void AddProduct(Product p)
+        {
+            var db = new TeamProjectFinalDB();
+            db.Products.Add(p);//
+            db.SaveChanges();
         }
     }
 }

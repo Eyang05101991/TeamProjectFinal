@@ -11,8 +11,8 @@ namespace TeamProjectFinal.Models
         [Key]
         public int ProductId { get; set; }
 
-        [Required]
-        public DateTime DateTimeProductPosted { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
 
         [Required]
         [StringLength(100)]

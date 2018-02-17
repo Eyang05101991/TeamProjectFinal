@@ -1,0 +1,57 @@
+﻿@model TeamProjectFinal.Models.ProductViewModel
+@{
+    ViewBag.Title = "Products";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Add Product", "Create", "Product")
+</p>
+
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(m => m.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.Owner)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.PhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(m => m.EmailAddress)
+        </th>
+    </tr>
+    @foreach(var p in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(m => m.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(m => m.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(m => m.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(m => m.Owner)
+            </td>
+            <td>
+                @Html.DisplayFor(m => m.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(m => m.EmailAddress)
+            </td>
+        </tr>
+    }
+</table>
+
