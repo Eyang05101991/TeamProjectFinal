@@ -10,6 +10,7 @@ namespace TeamProjectFinal.Models
     {
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime DatePosted { get; set; }
 
         [Required]
         [StringLength(100)]

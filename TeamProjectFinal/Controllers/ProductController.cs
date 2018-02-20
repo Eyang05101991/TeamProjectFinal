@@ -9,16 +9,31 @@ namespace TeamProjectFinal.Controllers
 {
     public class ProductController : Controller
     {
-        // GET: Product
+        [HttpGet]
         public ActionResult Index()
         {
-            return View(ProductDB.GetAllProducts());
+            return View(); 
         }
 
-        [HttpGet]
-        public ActionResult Create()
+        public ActionResult Index(ProductViewModel prod)
         {
-            return View(); 
+            if (ModelState.IsValid)
+            {
+                Product p = new Product()
+                {
+                    ProductName = prod.ProductName,
+                    PhoneNumber = prod.PhoneNumber,
+                    Price = prod.Price,
+                    Owner = prod.Owner,
+                    Category = prod.Category,
+                    Description = prod.Description,
+                    EmailAddress = prod.EmailAddress
+                };
+                ProductDB.AddProduct(p);
+                return RedirectToAction("Index", "Home");
+            }
+            return View(prod);
+
         }
 
         
