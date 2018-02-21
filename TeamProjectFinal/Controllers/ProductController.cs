@@ -36,6 +36,10 @@ namespace TeamProjectFinal.Controllers
 
         }
 
+        public ActionResult SeeProducts()
+        {
+            return View(ProductDB.GetAllProducts());
+        }
         
         //public ActionResult Create(Product prod)
         //{

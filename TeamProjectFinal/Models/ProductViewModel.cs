@@ -24,7 +24,7 @@ namespace TeamProjectFinal.Models
         public double Price { get; set; }
 
         [Required]
-        public string Category { get; set; }
+        public string Category { get; set; } 
 
         [Required]
         [StringLength(32767)]
