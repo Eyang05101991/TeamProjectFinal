@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using TeamProjectFinal.Models;
@@ -12,7 +13,7 @@ namespace TeamProjectFinal.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            return View(); 
+            return View();
         }
 
         public ActionResult Index(ProductViewModel prod)
@@ -40,7 +41,39 @@ namespace TeamProjectFinal.Controllers
         {
             return View(ProductDB.GetAllProducts());
         }
-        
+
+        [HttpGet]
+        public ActionResult Edit(int? id)
+        {
+            //if the id is null throw an exception
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Product p = ProductDB.GetProductById(id.Value);
+
+            if(p == null)
+            {
+                return HttpNotFound(); //404 error
+            }
+            //valid id was used and product was found!
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Product p)
+        {
+            if (ModelState.IsValid)
+            {
+                ProductDB.UpdateProduct(p);
+                return RedirectToAction("Index"); 
+
+            }
+            //return view with model and erros
+            return View(p); 
+        }
+
         //public ActionResult Create(Product prod)
         //{
         //    if (ModelState.IsValid)
@@ -57,7 +90,7 @@ namespace TeamProjectFinal.Controllers
         //        };
         //        ProductDB.AddProduct(p);
         //        return RedirectToAction("Index", "Product");    
-                
+
         //    }
         //}
     }
