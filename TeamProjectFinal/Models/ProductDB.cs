@@ -30,7 +30,7 @@ namespace TeamProjectFinal.Models
             //sends update query to database. 
             db.SaveChanges(); 
         }
-
+        
         internal static void AddProduct(Product p)
         {
             var db = new TeamProjectFinalDB();
