@@ -58,7 +58,7 @@ namespace TeamProjectFinal.Controllers
                 return HttpNotFound(); //404 error
             }
             //valid id was used and product was found!
-            return View();
+            return View(p);
         }
 
         [HttpPost]
