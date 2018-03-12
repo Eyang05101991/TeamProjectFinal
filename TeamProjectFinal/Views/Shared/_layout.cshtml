@@ -7,13 +7,13 @@
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet"/>
 </head>
-<body>
-    <div> 
+<body style="background-color: black">
+    <div class="container" style="border: solid; background-color:lightblue"> 
         <header>
             <h1>Fakelist</h1>
         </header>
-        <nav class="container-fluid" style="background-color: lightgreen">
-            <ul class="nav nav-tabs">
+        <nav class="container-fluid">
+            <ul class="nav nav-tabs" style="border:dotted; background-color:lightcyan">
                 <li class="nav-item">
                     <a class="nav-link active" href="#">@Html.ActionLink("Home", "Index", "Home")</a>
                 </li>
@@ -34,7 +34,7 @@
         <footer>
             &copy; @DateTime.Today.Year
         </footer>
-    </div>
+    </divclass="container">
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
