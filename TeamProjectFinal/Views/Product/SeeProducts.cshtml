@@ -9,7 +9,7 @@
 <p>
     @Html.ActionLink("Add Product", "Index")
 </p>
-<table class="table">
+<table class="table" style="border: solid;" >
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.ProductName)
@@ -36,7 +36,7 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
+    <tr style="border:solid">
         <td>
             @Html.DisplayFor(modelItem => item.ProductName)
         </td>
