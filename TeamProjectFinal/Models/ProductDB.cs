@@ -17,7 +17,8 @@ namespace TeamProjectFinal.Models
 
         public static void DeleteProduct()
         {
-            throw new NotImplementedException();
+            TeamProjectFinalDB db = new TeamProjectFinalDB();
+            db.Database.ExecuteSqlCommand("DELE Product");
         }
 
         public static void UpdateProduct(Product p)
