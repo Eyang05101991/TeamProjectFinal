@@ -67,10 +67,10 @@ namespace TeamProjectFinal.Controllers
             if (ModelState.IsValid)
             {
                 ProductDB.UpdateProduct(p);
-                return RedirectToAction("Index"); 
+                return RedirectToAction("SeeProducts"); 
 
             }
-            //return view with model and erros
+            //return view with 
             return View(p); 
         }
 
