@@ -74,6 +74,33 @@ namespace TeamProjectFinal.Controllers
             return View(p); 
         }
 
+        [HttpGet]
+        public ActionResult Delete(int? id)
+        {
+            if(id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest); 
+            }
+            Product p = ProductDB.GetProductById(id.Value); 
+            if(p == null)
+            {
+                return HttpNotFound();
+            }
+            return View(p); 
+        }
+
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            Product p = ProductDB.GetProductById(id); 
+            if(p == null)
+            {
+                return RedirectToAction("Index", "Product"); 
+            }
+            ProductDB.DeleteProduct(p); 
+            return RedirectToAction("Index", "Product"); 
+        }
+
         //public ActionResult Create(Product prod)
         //{
         //    if (ModelState.IsValid)

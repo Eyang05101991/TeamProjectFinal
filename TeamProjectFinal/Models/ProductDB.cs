@@ -50,5 +50,12 @@ namespace TeamProjectFinal.Models
             Product prod = db.Products.Find(id);
             return prod; 
         }
+
+        internal static void DeleteProduct(Product p)
+        {
+            var db = new TeamProjectFinalDB();
+            db.Products.Remove(p); 
+            db.SaveChanges(); 
+        }
     }
 }
