@@ -27,7 +27,7 @@ namespace TeamProjectFinal.Models
             
             //notifies context that product has been changed
             db.Entry(p).State = EntityState.Modified;
-
+            
             //sends update query to database. 
             db.SaveChanges(); 
         }
