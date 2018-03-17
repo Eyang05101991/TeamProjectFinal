@@ -40,5 +40,8 @@ namespace TeamProjectFinal.Models
 
         [Display(Name = "Email Address")]
         public string EmailAddress { get; set; }
+
+        [Display(Name = "UserPhoto")]
+        public byte[] UserPhoto { get; set; }
     }
 }
