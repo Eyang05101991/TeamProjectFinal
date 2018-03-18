@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -10,12 +11,26 @@ namespace TeamProjectFinal.Controllers
 {
     public class ProductController : Controller
     {
+
+        public FileContentResult UserPhotos()
+        {
+            string fileName = HttpContext.Server.MapPath(@"~/Images/noImg.png");
+            FileInfo fileInfo = new FileInfo(fileName);
+            long imageFileLength = fileInfo.Length;
+            FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+            BinaryReader br = new BinaryReader(fs);
+            var imageData = br.ReadBytes((int)imageFileLength);
+            return File(imageData, "image/png"); 
+            return new FileContentResult()
+        }
+
         [HttpGet]
         public ActionResult Index()
         {
             return View();
         }
 
+        [HttpPost]
         public ActionResult Index(ProductViewModel prod)
         {
             if (ModelState.IsValid)

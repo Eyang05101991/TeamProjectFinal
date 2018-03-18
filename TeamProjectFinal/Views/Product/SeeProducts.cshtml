@@ -9,8 +9,11 @@
 <p>
     @Html.ActionLink("Add Product", "Index")
 </p>
-<table class="table" style="border: solid;" >
+<table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DatePosted)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.ProductName)
         </th>
@@ -36,7 +39,10 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr style="border:solid">
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DatePosted)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.ProductName)
         </td>
@@ -59,8 +65,9 @@
             @Html.DisplayFor(modelItem => item.EmailAddress)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", "Product", new { id=item.ProductId}, new { @class="btn btn-primary"}) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ProductId }, new { @class="btn btn-danger"})
+            @Html.ActionLink("Edit", "Edit", new { id=item.ProductId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ProductId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ProductId })
         </td>
     </tr>
 }
