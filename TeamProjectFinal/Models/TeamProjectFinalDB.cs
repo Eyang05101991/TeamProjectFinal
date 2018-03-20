@@ -23,6 +23,7 @@ namespace TeamProjectFinal.Models
         // public virtual DbSet<MyEntity> MyEntities { get; set; }
         public virtual DbSet<Subscriber> Subscribers { get; set; }
         public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<UsedProduct> UsedProducts{get; set;}
     }
 
     //public class MyEntity
